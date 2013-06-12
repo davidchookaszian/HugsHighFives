@@ -1,0 +1,27 @@
+<% if session["user_id"] %>
+  <p>
+    <%= link_to "Add a New Product", '/products/new' %>
+  </p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= link_to "Title", "/products?sortby=desc" %></th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= link_to "Remove", "products/#{product.id}", method: 'delete' %>
+        <%= link_to "Edit", "products/#{product.id}/edit" %>
+      </td>
+      <td><%= link_to product.title, "/products/#{product.id}" %></td>
+      <td><%= product.description %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
