@@ -3,7 +3,7 @@
 <%= form_tag "/products" do %>
   <p>
     <%= label_tag :title, "Type of Hug" %>
-    <%= text_field_tag :title, "", size: 80, placeholder: "Enter hug type here..." %>
+    <%= text_field_tag :title, "", size: 80, placeholder: "Enter hug or high five type here..." %>
   </p>
   <p>
     <%= label_tag :description, "Description" %>
@@ -22,5 +22,6 @@
     <%= text_field_tag :Price, " ", size: 10 %>
   </p>
   <%= submit_tag "Submit" %>
+  <%= submit_tag "Cancel" %>
 
 <% end %>

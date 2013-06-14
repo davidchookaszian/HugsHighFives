@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Product.destroy_all
+#Product.destroy_all
 
-data = [{title: "MJ Hug", description: "Championship trophy hug", detail: "Have you ever won a national championship?  If so, you would hug that trophy just as hard.", price: 10.00}, {title: "Awkward High Five", description: "Incredibly awkard", detail: "Perfect for professional settings or when mingling with uncoordinated/unathlethic people.", price: 8.00}, {title: "Lingering Hug", description: "That creepy hug that lasts just a bit too long.", detail: "Perfect for distant relatives, ex-girlfriends, or even new acquaintences!", price: 25.00}]
+data = [{title: "MJ Hug", description: "Championship trophy hug", detail: "Have you ever won a title?  If so, you would hug that trophy just as hard.", size: "large",  price: 10.00}, {title: "Awkward High Five", description: "Incredibly awkard", detail: "Perfect for professional settings or when mingling with uncoordinated/unathlethic people.", size: "small", price: 8.00}, {title: "Lingering Hug", description: "That creepy hug that lasts just a bit too long.", detail: "Perfect for distant relatives, ex-girlfriends, or even new acquaintences!", size: "large", price: 25.00}]
 
 data.each do |product_info|
   m = Product.new

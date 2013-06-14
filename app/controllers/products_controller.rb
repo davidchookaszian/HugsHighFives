@@ -1,9 +1,13 @@
 class ProductsController < ApplicationController
 
-  def remove
+  def destroy
     m = Product.find_by_id(params["id"])
-    m.remove
+    m.destroy
     redirect_to "/products"
+  end
+
+  def edit
+    @product = Product.find_by_id(params["id"])
   end
 
   def index
@@ -19,9 +23,13 @@ class ProductsController < ApplicationController
       session["last_product_id"] = @product.id
   end
 
-  def edit
-    @product = Product.find_by_id(params["id"])
+before_filter :check_for_cancel, :only => [:create, :update]
+
+def check_for_cancel
+  if params[:commit] == "Cancel"
+    redirect_to "/products"
   end
+end
 
   def create
       @product = Product.new
@@ -44,7 +52,7 @@ def update
     @product.size_id = params[:size_id]
     @product.price = params[:price]
     @product.save
-    redirect_to "/products/:id"
+    redirect_to "/products"
   end
 
     def new

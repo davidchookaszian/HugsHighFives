@@ -24,7 +24,7 @@ HHF::Application.routes.draw do
   delete '/users/:id', controller: 'users', action: 'destroy'
   #------------------------------
 
-  # Route for our home page.
+  # Routes for our Products.
   get '/home', controller: 'products', action: 'index'
 
   get "/products", controller: 'products', action: 'index'
@@ -35,7 +35,7 @@ HHF::Application.routes.draw do
   get '/products/:id', controller: 'products', action: 'show'
   put '/products/:id', controller: 'products', action: 'update'
 
-  delete '/products/:id', controller: 'products', action: 'remove'
+  delete '/products/:id', controller: 'products', action: 'destroy'
 
   get "/products/:id/edit", controller: 'products', action: 'edit'
 
